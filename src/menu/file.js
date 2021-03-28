@@ -8,10 +8,10 @@ const file = require('./../file');
 const settings = require('./../settings');
 
 module.exports = {
-  label: 'File',
+  label: '文件',
   submenu: [
     {
-      label: 'Search',
+      label: '搜索',
       accelerator: 'CmdorCtrl+F',
       click() {
         activate('search');
@@ -19,22 +19,22 @@ module.exports = {
     }, {
       type: 'separator'
     }, {
-      label: 'List',
+      label: '清单',
       submenu: [
         {
-          label: 'New List',
+          label: '新建清单',
           accelerator: setAcc('new-list', 'CmdorCtrl+L'),
           click() {
             activate('new-list');
           }
         }, {
-          label: 'Delete List',
+          label: '删除清单',
           accelerator: setAcc('delete-list', 'CmdorCtrl+Shift+D'),
           click() {
             activate('delete-list');
           }
         }, {
-          label: 'Rename List',
+          label: '重命名清单',
           accelerator: setAcc('rename-list', 'CmdorCtrl+Y'),
           click() {
             activate('rename-list');
@@ -42,7 +42,7 @@ module.exports = {
         }, {
           type: 'separator'
         }, {
-          label: 'Hide Completed Todos',
+          label: '隐藏已完成的Todo',
           accelerator: setAcc('hide-todo', 'CmdorCtrl+Shift+H'),
           click() {
             activate('hide-todo');
@@ -53,19 +53,19 @@ module.exports = {
       label: 'Todo',
       submenu: [
         {
-          label: 'New Todo',
+          label: '新建Todo',
           accelerator: setAcc('new-todo', 'CmdorCtrl+N'),
           click() {
             activate('new-todo');
           }
         }, {
-          label: 'Delete Todo',
+          label: '删除Todo',
           accelerator: setAcc('delete-todo', 'CmdorCtrl+D'),
           click() {
             activate('delete-todo');
           }
         }, {
-          label: 'Rename Todo',
+          label: '重命名Todo',
           accelerator: setAcc('rename-todo', 'CmdorCtrl+T'),
           click() {
             activate('rename-todo');
@@ -73,13 +73,13 @@ module.exports = {
         }, {
           type: 'separator'
         }, {
-          label: 'Add to My Day',
+          label: '添加到"我的一天"',
           accelerator: setAcc('add-my-day', 'CmdorCtrl+K'),
           click() {
             activate('add-my-day');
           }
         }, {
-          label: 'Complete Todo',
+          label: '完成Todo',
           accelerator: setAcc('complete-todo', 'CmdorCtrl+Shift+N'),
           click() {
             activate('complete-todo');
@@ -87,13 +87,13 @@ module.exports = {
         }, {
           type: 'separator'
         }, {
-          label: 'Set Reminder',
+          label: '设置提醒时间',
           accelerator: setAcc('set-reminder', 'CmdorCtrl+Shift+E'),
           click() {
             activate('set-reminder');
           }
         }, {
-          label: 'Add Due Date',
+          label: '添加到期日期',
           accelerator: setAcc('add-due-date', 'CmdorCtrl+Shift+T'),
           click() {
             activate('add-due-date');
@@ -103,22 +103,22 @@ module.exports = {
     }, {
       type: 'separator'
     }, {
-      label: 'Go to',
+      label: '转到',
       submenu: [
         {
-          label: 'My Day',
+          label: '我的一天',
           accelerator: setAcc('my-day', 'CmdorCtrl+M'),
           click() {
             activate('my-day');
           }
         }, {
-          label: 'Important',
+          label: '重要',
           accelerator: setAcc('important', 'CmdorCtrl+I'),
           click() {
             activate('important');
           }
         }, {
-          label: 'Planned',
+          label: '已计划日程',
           accelerator: setAcc('planned', 'CmdorCtrl+P'),
           click() {
             activate('planned');
@@ -132,7 +132,7 @@ module.exports = {
         }
       ]
     }, {
-      label: 'Return to Todos',
+      label: '回到Todo',
       accelerator: setAcc('return', 'Esc'),
       click() {
         activate('return');
@@ -140,13 +140,13 @@ module.exports = {
     }, {
       type: 'separator'
     }, {
-      label: 'To-Do Settings',
+      label: 'To-Do设置',
       accelerator: setAcc('settings', 'CmdorCtrl+,'),
       click() {
         activate('settings');
       }
     }, {
-      label: 'Launch on Start',
+      label: '开机时启动',
       type: 'checkbox',
       checked: settings.get('autoLaunch'),
       click(item) {
@@ -154,7 +154,7 @@ module.exports = {
         activate('auto-launch');
       }
     }, {
-      label: 'Launch Minimized',
+      label: '启动时最小化',
       type: 'checkbox',
       checked: settings.get('launchMinimized'),
       click(item) {
@@ -163,13 +163,13 @@ module.exports = {
     }, {
       type: 'separator'
     }, {
-      label: 'Edit Shortcut Keys',
+      label: '编辑快捷键',
       accelerator: 'CmdorCtrl+.',
       click() {
         shell.openExternal(file.localConfig);
       }
     }, {
-      label: 'Enable Global Shortcut Keys',
+      label: '启用全局快捷键',
       type: 'checkbox',
       checked: settings.get('useGlobalShortcuts'),
       click(item) {
@@ -177,7 +177,7 @@ module.exports = {
         item.checked = settings.get('useGlobalShortcuts');
       }
     }, {
-      label: 'Request Exit Confirmation',
+      label: '退出时确认',
       type: 'checkbox',
       checked: settings.get('requestExitConfirmation'),
       click(item) {
@@ -186,13 +186,13 @@ module.exports = {
     }, {
       type: 'separator'
     }, {
-      label: 'Sign out',
+      label: '退出账户',
       accelerator: setAcc('sign-out', 'CmdorCtrl+Alt+Q'),
       click() {
         dialog.confirmSignOut();
       }
     }, {
-      label: 'Exit',
+      label: '退出',
       visible: !is.darwin,
       click() {
         dialog.confirmExit();

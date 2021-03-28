@@ -1,28 +1,28 @@
 'use strict';
 
 module.exports = {
-  label: 'Edit',
+  label: '编辑',
   submenu: [
     {
       type: 'separator'
     }, {
-      role: 'undo'
+      role: '撤销'
     }, {
-      role: 'redo'
+      role: '重做'
     }, {
       type: 'separator'
     }, {
-      role: 'cut'
+      role: '剪切'
     }, {
-      role: 'copy'
+      role: '复制'
     }, {
-      role: 'paste'
+      role: '粘贴'
     }, {
-      role: 'pasteandmatchstyle'
+      role: '粘贴和匹配样式'
     }, {
-      role: 'delete'
+      role: '删除'
     }, {
-      role: 'selectall'
+      role: '全选'
     }
   ]
 };
